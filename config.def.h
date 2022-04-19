@@ -28,6 +28,9 @@ static const char *colors[][3]      = {
 /* tagging */
 static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 
+/* Lockfile */
+static char lockfile[] = "/tmp/dwm.lock";
+
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
