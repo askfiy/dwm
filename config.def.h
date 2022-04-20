@@ -75,9 +75,17 @@ static const char *dmenucmd[] = { "ulauncher", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "180x40", NULL };
-static const char *volume_add[] = { "amixer", "sset", "Master", "5%+", "unmute", NULL };
-static const char *volume_sub[] = { "amixer", "sset", "Master", "5%-", "unmute", NULL };
-static const char *volume_toggle[] = { "amixer", "sset", "Master", "toggle", NULL };
+static const char *incr_volume[] = { "amixer", "sset", "Master", "5%+", "unmute", NULL };
+static const char *decr_volume[] = { "amixer", "sset", "Master", "5%-", "unmute", NULL };
+static const char *toggle_volume[] = { "amixer", "sset", "Master", "toggle", NULL };
+static const char *scrot_to_clipboard[] = {
+	"scrot",
+	"-s",
+	"/tmp/scrot_%F_%T_$wx$h.png",
+	"-e",
+	"xclip -selection clipboard -target image/png -i $f",
+	NULL 
+};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -118,9 +126,10 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY,                       XK_F11,    spawn,          {.v = volume_sub } },
-	{ MODKEY,                       XK_F12,    spawn,          {.v = volume_add } },
-	{ MODKEY,                       XK_F10,    spawn,          {.v = volume_toggle } },
+	{ MODKEY,                       XK_F11,    spawn,          {.v = decr_volume } },
+	{ MODKEY,                       XK_F12,    spawn,          {.v = incr_volume } },
+	{ MODKEY,                       XK_F10,    spawn,          {.v = toggle_volume } },
+	{ Mod1Mask,                     XK_a,      spawn,          {.v = scrot_to_clipboard } },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ShiftMask,             XK_r,      quit,           {1} },
 };

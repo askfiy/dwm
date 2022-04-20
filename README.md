@@ -6,6 +6,8 @@ This is a dwm I built myself and it works perfectly without any conflicts.
 
 ![dwm](https://user-images.githubusercontent.com/81478335/164265284-5b3eeee1-6e15-49d3-9205-3b82872fd695.png)
 
+You can modify all configuration here by editing the [config.def.h](./config.def.h) file.
+
 ## how to install
 
 To start using it is very simple, you need to clone the project:
@@ -26,7 +28,9 @@ $ yay -S noto-fonts-emoji
 $ yay -S alacritty-git
 $ yay -S ulauncher
 $ yay -S st
-$ yay -S alsa-utils
+$ yay -S alsa-utils (Manjaro does not need to be installed)
+$ yay -S scrot
+$ yay -S xclip
 ```
 
 Set udsik2 to start automatically at boot:
@@ -148,6 +152,34 @@ export LANGUAGE="zh_CN.UTF-8"
 ```
 
 Note that they need to be placed before the exec dwm statement, and also need to have Chinese font support.
+
+## some keys
+
+My custom keys:
+
+```
+modkey = super_L
+modkey + return        ： start up alacritty
+modkey + shift + return： switch split screen position
+modkey + o             ： open floating terminal (st)
+modkey + q             ： kill current focus
+modkey + +             ： increase the window spacing
+modkey + -             ： decrease the window spacing
+modkey + shift + +     ： initialize all window spacing
+modkey + shift + -     ： restore the last window spacing 
+modkey + f11           ： decrease current volume
+modkey + f12           ： increase current volume
+modkey + f10           ： toggle the mute state of the current volume
+modkey + shift + r     ： restart dwm without exiting dwm
+modkey + shift + q     ： now, you have to double click to exit dwm
+alt_l  + a             ： start taking a screenshot and save the image result in the clipboard
+```
+
+The screenshot files are saved in the /tmp/ directory, you can delete them with the following command:
+
+```
+$ rm -rf /tmp/*.png
+```
 
 ## Patches used
 
