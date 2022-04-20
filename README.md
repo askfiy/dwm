@@ -37,12 +37,12 @@ $ sudo systemctl enable udisks2
 
 ## how to use
 
-If you've never used DWM, you should read this simple tutorial.
+If you've never used dwm, you should read this simple tutorial.
 
-I use Manjaro Linux and after installation we have 2 options to specify how to enter DWM:
+I use Manjaro Linux and after installation we have 2 options to specify how to enter dwm:
 
 - Start with the startx command（recommend）
-- In the login interface, select DWM login
+- In the login interface, select dwm login
 
 ### startx run dwm
 
@@ -116,13 +116,13 @@ Type=XSession
 
 An autostart.sh file can be created in the $HOME/.script/dwm/ directory.
 
-This file will be executed automatically after DWM starts successfully.
+This file will be executed automatically after dwm starts successfully.
 
 About my startup script, you can get it in the [askfiy/.script](https://github.com/askfiy/dwm) repository.
 
 ## status bar configuration
 
-The default DWM startup has no status bar, I uploaded a slstatus configuration that I use, you can find it in [askfiy/slstatus].
+The default dwm startup has no status bar, I uploaded a slstatus configuration that I use, you can find it in [askfiy/slstatus](https://github.com/askfiy/slstatus).
 
 ## tag management
 
