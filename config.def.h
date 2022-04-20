@@ -2,7 +2,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const Gap default_gap        = {.isgap = 5, .realgap = 10, .gappx = 10};
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -27,7 +27,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+static const char *tags[] = { " ", " ", " ", " ", " ", " ", " ", " ", " " };
 
 /* Lockfile */
 static char lockfile[] = "/tmp/dwm.lock";
@@ -50,9 +50,9 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "<T>",      tile },    /* first entry is default */
-	{ "<N>",      NULL },    /* no layout function means floating behavior */
-	{ "<M>",      monocle },
+	{ "ﰦ ",      tile },    /* first entry is default */
+	{ " ",      NULL },    /* no layout function means floating behavior */
+	{ " ",      monocle },
 };
 
 /* key definitions */
@@ -72,6 +72,9 @@ static const char *dmenucmd[] = { "ulauncher", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "180x40", NULL };
+static const char *volume_add[] = { "amixer", "sset", "Master", "5%+", "unmute", NULL };
+static const char *volume_sub[] = { "amixer", "sset", "Master", "5%-", "unmute", NULL };
+static const char *volume_toggle[] = { "amixer", "sset", "Master", "toggle", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -112,6 +115,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
+	{ MODKEY,                       XK_F11,    spawn,          {.v = volume_sub } },
+	{ MODKEY,                       XK_F12,    spawn,          {.v = volume_add } },
+	{ MODKEY,                       XK_F10,    spawn,          {.v = volume_toggle } },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ShiftMask,             XK_r,      quit,           {1} },
 };
