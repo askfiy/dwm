@@ -20,7 +20,7 @@ static const char normal_bg[]       = "#1E1E2E";
 static const char normal_bd[]       = "#575268";
 static const char focus_fg[]        = "#D9E0EE";
 static const char focus_bg[]        = "#575268";
-static const char focus_bd[]        = "#B5E8E0";
+static const char focus_bd[]        = "#96CDFB";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
