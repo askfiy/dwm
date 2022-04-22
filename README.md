@@ -24,7 +24,7 @@ Also you should download some dependencies:
 $ yay -S xorg-xinit feh udisks2 udiskie pcmanfm
 $ yay -S archlinuxcn/nerd-fonts-agave
 $ yay -S libxft-bgra
-$ yay -S compton
+$ yay -S picom
 $ yay -S noto-fonts-emoji
 $ yay -S alacritty-git
 $ yay -S ulauncher
