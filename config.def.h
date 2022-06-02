@@ -72,20 +72,22 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "ulauncher", NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "180x40", NULL };
 static const char *incr_volume[] = { "amixer", "sset", "Master", "5%+", "unmute", NULL };
 static const char *decr_volume[] = { "amixer", "sset", "Master", "5%-", "unmute", NULL };
 static const char *toggle_volume[] = { "amixer", "sset", "Master", "toggle", NULL };
-static const char *scrot_to_clipboard[] = {
-	"scrot",
-	"-s",
-	"/tmp/scrot_%F_%T_$wx$h.png",
-	"-e",
-	"xclip -selection clipboard -target image/png -i $f",
-	NULL 
-};
+static const char *flameshot_gui[] = { "flameshot", "gui", NULL };
+
+// static const char *scrot_to_clipboard[] = {
+// 	"scrot",
+// 	"-s",
+// 	"/tmp/scrot_%F_%T_$wx$h.png",
+// 	"-e",
+// 	"xclip -selection clipboard -target image/png -i $f",
+// 	NULL 
+// };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -129,7 +131,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_F11,    spawn,          {.v = decr_volume } },
 	{ MODKEY,                       XK_F12,    spawn,          {.v = incr_volume } },
 	{ MODKEY,                       XK_F10,    spawn,          {.v = toggle_volume } },
-	{ Mod1Mask,                     XK_a,      spawn,          {.v = scrot_to_clipboard } },
+	// { Mod1Mask,                     XK_a,      spawn,          {.v = scrot_to_clipboard } },
+	{ Mod1Mask,                     XK_a,      spawn,          {.v = flameshot_gui} },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ShiftMask,             XK_r,      quit,           {1} },
 };

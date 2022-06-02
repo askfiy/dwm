@@ -30,6 +30,9 @@ $ yay -S alacritty-git
 $ yay -S ulauncher
 $ yay -S st
 $ yay -S alsa-utils (Manjaro does not need to be installed)
+# Recommended to use flameshot screenshot (default)
+$ yay -S flameshot
+# Can choose this kind of screenshot (not perfect)
 $ yay -S scrot
 $ yay -S xclip
 ```
@@ -144,12 +147,11 @@ These software are specially set for Chinese users, if you don't like them, you 
 
 I found that when using wechat, if the system language is not Chinese, it will produce garbled characters.
 
-You can add the following 2 lines of code to your ~/.xinitrc file:
+You can add the following 1 lines of code to your ~/.zshrc or ~/.bashrc file:
 
 ```
 # set to Chinese language
 export LANG="zh_CN.UTF-8"
-export LANGUAGE="zh_CN.UTF-8"
 ```
 
 Note that they need to be placed before the exec dwm statement, and also need to have Chinese font support.
@@ -173,7 +175,7 @@ modkey + f12           ： increase current volume
 modkey + f10           ： toggle the mute state of the current volume
 modkey + shift + r     ： restart dwm without exiting dwm
 modkey + shift + q     ： now, you have to double click to exit dwm
-alt_l  + a             ： start taking a screenshot and save the image result in the clipboard
+alt_l  + a             ： start taking a screenshot
 ```
 
 The screenshot files are saved in the /tmp/ directory, you can delete them with the following command:
