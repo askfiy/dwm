@@ -25,11 +25,10 @@ $ yay -S xorg-xinit feh udisks2 udiskie pcmanfm
 $ yay -S archlinuxcn/nerd-fonts-agave
 $ yay -S libxft-bgra
 $ yay -S picom
-$ yay -S noto-fonts-emoji
 $ yay -S alacritty-git
 $ yay -S ulauncher
-$ yay -S st
 $ yay -S alsa-utils (Manjaro does not need to be installed)
+$ yay -S nvidia-prime (Manjaro does not need to be installed)
 # Recommended to use flameshot screenshot (default)
 $ yay -S flameshot
 # Can choose this kind of screenshot (not perfect)
@@ -52,7 +51,7 @@ I use Manjaro Linux and after installation we have 2 options to specify how to e
 - Start with the startx command（recommend）
 - In the login interface, select dwm login
 
-### startx run dwm
+### startx run dwm (manjaro)
 
 Entering the dwm via startx is a bit more complicated, but it's so convenient that you can completely forgo mouse clicks:
 
@@ -104,6 +103,20 @@ After restarting your computer and entering your username and password, you can 
 $ startx
 ```
 
+### arch startx
+
+On arch linux, using it is as simple as, if you have newly installed arch and just want to use DWM you can check it out:
+
+```
+$ nvim ~/.xinitrc
+```
+
+Added content:
+
+```
+exec dwm
+```
+
 ### login interface select dwm
 
 If you want to select dwm in the login screen and enter (like i3wm), you can create a new file dwm.desktop in the /usr/share/xsessions/ directory and enter the following:
@@ -126,7 +139,7 @@ An autostart.sh file can be created in the $HOME/.script/dwm/ directory.
 
 This file will be executed automatically after dwm starts successfully.
 
-About my startup script, you can get it in the [askfiy/.script](https://github.com/askfiy/dwm) repository.
+About my startup script, you can get it in the [askfiy/.script](https://github.com/askfiy/.script) repository.
 
 ## status bar configuration
 
