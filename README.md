@@ -26,7 +26,6 @@ $ yay -S archlinuxcn/nerd-fonts-agave
 $ yay -S libxft-bgra
 $ yay -S st (you can also use my built st)
 $ yay -S picom
-$ yay -S alacritty-git
 $ yay -S ulauncher
 $ yay -S alsa-utils (Manjaro does not need to be installed)
 $ yay -S nvidia-prime (Manjaro does not need to be installed)
