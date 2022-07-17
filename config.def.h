@@ -155,13 +155,13 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ 0,                            XF86_F2,    spawn,          {.v = decr_volume } },
-	{ 0,                            XF86_F3,    spawn,          {.v = incr_volume } },
-	{ 0,                            XF86_F1,    spawn,          {.v = toggle_volume } },
-	{ 0,                            XF86_F5,    spawn,          {.v = decr_backlight } },
-	{ 0,                            XF86_F6,    spawn,          {.v = incr_backlight } },
-	{ 0,                            XF86_F10,   spawn,          {.v = enable_touchpad } },
-	{ 0,                            XF86_F11,   spawn,          {.v = disable_touchpad } },
+	{ShiftMask,                     XF86_F2,    spawn,          {.v = decr_volume } },
+	{ShiftMask,                     XF86_F3,    spawn,          {.v = incr_volume } },
+	{ShiftMask,                     XF86_F1,    spawn,          {.v = toggle_volume } },
+	{ShiftMask,                     XF86_F5,    spawn,          {.v = decr_backlight } },
+	{ShiftMask,                     XF86_F6,    spawn,          {.v = incr_backlight } },
+	{ShiftMask,                     XF86_F10,   spawn,          {.v = enable_touchpad } },
+	{ShiftMask,                     XF86_F11,   spawn,          {.v = disable_touchpad } },
 	// { Mod1Mask,                     XK_a,      spawn,          {.v = scrot_to_clipboard } },
 	{ Mod1Mask,                     XK_a,      spawn,          {.v = flameshot_gui} },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },

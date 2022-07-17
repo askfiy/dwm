@@ -181,14 +181,19 @@ modkey + o             ： open floating terminal (st)
 modkey + q             ： kill current focus
 modkey + +             ： increase the window spacing
 modkey + -             ： decrease the window spacing
-modkey + shift + +     ： initialize all window spacing
-modkey + shift + -     ： restore the last window spacing 
-modkey + f11           ： decrease current volume
-modkey + f12           ： increase current volume
-modkey + f10           ： toggle the mute state of the current volume
 modkey + shift + r     ： restart dwm without exiting dwm
 modkey + shift + q     ： now, you have to double click to exit dwm
 alt_l  + a             ： start taking a screenshot
+
+shift + fn + f1 : toggle volume
+shift + fn + f2 : increase volume
+shift + fn + f3 : decrease volume
+
+shift + fn + f5 : decrease screen brightness
+shift + fn + f6 : increase screen brightness
+
+shift + fn + f10 : enable touchpad
+shift + fn + f11 : disable touchpad
 ```
 
 The screenshot files are saved in the /tmp/ directory, you can delete them with the following command:
