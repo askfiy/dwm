@@ -92,6 +92,18 @@ static const char *toggle_volume[] = { "amixer", "sset", "Master", "toggle", NUL
 static const char *incr_backlight[] = { "xbacklight", "-inc", "10", NULL };
 static const char *decr_backlight[] = { "xbacklight", "-dec", "10", NULL };
 
+// disable or enable Touchpad
+/*
+You can see your touchpad id using xinput list
+*/
+#define XF86_F10 0xffc7
+#define XF86_F11 0xffc8
+
+static const char *enable_touchpad[] = { "xinput", "enable", "12", NULL };
+static const char *disable_touchpad[] = { "xinput", "disable", "12", NULL };
+
+// if xinput list-props 12 | grep 'Device Enabled ([[:digit:]]\+):\s*1' >/dev/null; then xinput disable 12; else xinput enable 12; fi
+
 // screenshot
 static const char *flameshot_gui[] = { "flameshot", "gui", NULL };
 
@@ -148,6 +160,8 @@ static Key keys[] = {
 	{ 0,                            XF86_F1,    spawn,          {.v = toggle_volume } },
 	{ 0,                            XF86_F5,    spawn,          {.v = decr_backlight } },
 	{ 0,                            XF86_F6,    spawn,          {.v = incr_backlight } },
+	{ 0,                            XF86_F10,   spawn,          {.v = enable_touchpad } },
+	{ 0,                            XF86_F11,   spawn,          {.v = disable_touchpad } },
 	// { Mod1Mask,                     XK_a,      spawn,          {.v = scrot_to_clipboard } },
 	{ Mod1Mask,                     XK_a,      spawn,          {.v = flameshot_gui} },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
