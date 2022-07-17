@@ -75,9 +75,24 @@ static const char *dmenucmd[] = { "ulauncher", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "180x40", NULL };
+
+// voice control
+#define XF86_F1 0xffbe
+#define XF86_F2 0xffbf
+#define XF86_F3 0xffc0
+
 static const char *incr_volume[] = { "amixer", "sset", "Master", "5%+", "unmute", NULL };
 static const char *decr_volume[] = { "amixer", "sset", "Master", "5%-", "unmute", NULL };
 static const char *toggle_volume[] = { "amixer", "sset", "Master", "toggle", NULL };
+
+// screen backlight brightness adjustment
+#define XF86_F5 0xffc2
+#define XF86_F6 0xffc3
+
+static const char *incr_backlight[] = { "xbacklight", "-inc", "10", NULL };
+static const char *decr_backlight[] = { "xbacklight", "-dec", "10", NULL };
+
+// screenshot
 static const char *flameshot_gui[] = { "flameshot", "gui", NULL };
 
 // static const char *scrot_to_clipboard[] = {
@@ -128,14 +143,18 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY,                       XK_F11,    spawn,          {.v = decr_volume } },
-	{ MODKEY,                       XK_F12,    spawn,          {.v = incr_volume } },
-	{ MODKEY,                       XK_F10,    spawn,          {.v = toggle_volume } },
+	{ 0,                            XF86_F2,    spawn,          {.v = decr_volume } },
+	{ 0,                            XF86_F3,    spawn,          {.v = incr_volume } },
+	{ 0,                            XF86_F1,    spawn,          {.v = toggle_volume } },
+	{ 0,                            XF86_F5,    spawn,          {.v = decr_backlight } },
+	{ 0,                            XF86_F6,    spawn,          {.v = incr_backlight } },
 	// { Mod1Mask,                     XK_a,      spawn,          {.v = scrot_to_clipboard } },
 	{ Mod1Mask,                     XK_a,      spawn,          {.v = flameshot_gui} },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ShiftMask,             XK_r,      quit,           {1} },
 };
+
+
 
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
