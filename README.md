@@ -34,6 +34,7 @@ $ yay -S flameshot
 # Can choose this kind of screenshot (not perfect)
 $ yay -S scrot
 $ yay -S xclip
+$ yay -S ulauncher (Auto hide mouse cursor)
 ```
 
 Set udsik2 to start automatically at boot:
