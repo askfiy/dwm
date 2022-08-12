@@ -175,6 +175,8 @@ My custom keys:
 
 ```
 modkey = super_L
+modkey + [             ： switch display device to edp01
+modkey + ]             ： switch display device to dp01
 modkey + return        ： start up alacritty
 modkey + shift + return： switch split screen position
 modkey + o             ： open floating terminal (st)

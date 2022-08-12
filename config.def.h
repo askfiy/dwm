@@ -13,8 +13,8 @@ static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 0;     /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const char *fonts[]          = { "agave Nerd Font:size=18", "JoyPixels:size=16:antialias=true:autohint=true" };
-static const char dmenufont[]       = "agave Nerd Font:size=18";
+static const char *fonts[]          = { "agave Nerd Font:size=14", "JoyPixels:size=12:antialias=true:autohint=true" };
+static const char dmenufont[]       = "agave Nerd Font:size=14";
 static const char normal_fg[]       = "#D9E0EE";
 static const char normal_bg[]       = "#1E1E2E";
 static const char normal_bd[]       = "#575268";
@@ -102,6 +102,13 @@ You can see your touchpad id using xinput list
 static const char *enable_touchpad[] = { "xinput", "enable", "12", NULL };
 static const char *disable_touchpad[] = { "xinput", "disable", "12", NULL };
 
+// switch display device
+#define XF86_LF 0x5b
+#define XF86_RF 0x5d
+
+static const char *display_to_edp01[] = {"xrandr", "--output", "DP-1", "--off", "--output", "eDP-1", "--auto", NULL };
+static const char *display_to_dp01[] = {"xrandr", "--output", "DP-1", "--mode", "1920x1080", "--rate", "60", "--output", "eDP-1", "--off", NULL };
+
 // if xinput list-props 12 | grep 'Device Enabled ([[:digit:]]\+):\s*1' >/dev/null; then xinput disable 12; else xinput enable 12; fi
 
 // screenshot
@@ -155,19 +162,20 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ShiftMask,                     XF86_F2,    spawn,          {.v = decr_volume } },
-	{ShiftMask,                     XF86_F3,    spawn,          {.v = incr_volume } },
-	{ShiftMask,                     XF86_F1,    spawn,          {.v = toggle_volume } },
-	{ShiftMask,                     XF86_F5,    spawn,          {.v = decr_backlight } },
-	{ShiftMask,                     XF86_F6,    spawn,          {.v = incr_backlight } },
-	{ShiftMask,                     XF86_F10,   spawn,          {.v = enable_touchpad } },
-	{ShiftMask,                     XF86_F11,   spawn,          {.v = disable_touchpad } },
+	{ ShiftMask,                    XF86_F2,    spawn,          {.v = decr_volume } },
+	{ ShiftMask,                    XF86_F3,    spawn,          {.v = incr_volume } },
+	{ ShiftMask,                    XF86_F1,    spawn,          {.v = toggle_volume } },
+	{ ShiftMask,                    XF86_F5,    spawn,          {.v = decr_backlight } },
+	{ ShiftMask,                    XF86_F6,    spawn,          {.v = incr_backlight } },
+	{ ShiftMask,                    XF86_F10,   spawn,          {.v = enable_touchpad } },
+	{ ShiftMask,                    XF86_F11,   spawn,          {.v = disable_touchpad } },
+	{ MODKEY,                       XF86_LF,    spawn,          {.v = display_to_edp01 } },
+	{ MODKEY,                       XF86_RF,    spawn,          {.v = display_to_dp01 } },
 	// { Mod1Mask,                     XK_a,      spawn,          {.v = scrot_to_clipboard } },
 	{ Mod1Mask,                     XK_a,      spawn,          {.v = flameshot_gui} },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ShiftMask,             XK_r,      quit,           {1} },
 };
-
 
 
 /* button definitions */
@@ -186,4 +194,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
