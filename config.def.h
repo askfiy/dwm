@@ -13,8 +13,8 @@ static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 0;     /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const char *fonts[]          = { "agave Nerd Font:size=14", "JoyPixels:size=12:antialias=true:autohint=true" };
-static const char dmenufont[]       = "agave Nerd Font:size=14";
+static const char *fonts[]          = { "GoMono Nerd Font:size=12", "JoyPixels:size=12:antialias=true:autohint=true" };
+static const char dmenufont[]       = "GoMono Nerd Font:size=12";
 static const char normal_fg[]       = "#D9E0EE";
 static const char normal_bg[]       = "#1E1E2E";
 static const char normal_bd[]       = "#575268";

@@ -22,7 +22,7 @@ Also you should download some dependencies:
 
 ```
 $ yay -S xorg-xinit feh udisks2 udiskie pcmanfm
-$ yay -S archlinuxcn/nerd-fonts-agave
+$ yay -S archlinuxcn/nerd-fonts-go
 $ yay -S libxft-bgra
 $ yay -S st (you can also use my built st)
 $ yay -S picom
