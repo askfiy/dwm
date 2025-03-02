@@ -12,7 +12,7 @@ Install all Depends:
 $ yay -S st
 $ yay -S picom
 $ yay -S dmenu
-$ yay -S nerd-fonts-go
+$ yay -S nerd-fonts
 ```
 
 ## Disposition
